@@ -14,6 +14,7 @@ let allOutuputFiles = [];
 let originalfileName = "";
 let downloadFileName = "";
 
+app.use(express.static());
 app.use(fileUpload());
 
 app.get("/", (req, res) => {
