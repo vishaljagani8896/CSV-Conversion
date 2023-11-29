@@ -5,6 +5,9 @@ const path = require("path");
 const readline = require("readline");
 
 const app = express();
+app.use(express.static('./'));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 const port = 3000;
 
 let inputLinesCount = 0;
@@ -14,7 +17,6 @@ let allOutuputFiles = [];
 let originalfileName = "";
 let downloadFileName = "";
 
-app.use(express.static('./'));
 app.use(fileUpload());
 
 app.get("/", (req, res) => {
